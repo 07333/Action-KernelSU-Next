@@ -98,7 +98,6 @@ jobs:
            cp ../susfs4ksu/kernel_patches/50_add_susfs_in_gki-${{ github.event.inputs.ANDROID_VERSION }}-${{ github.event.inputs.KERNEL_VERSION }}.patch ./common/
            cp ../susfs4ksu/kernel_patches/fs/* ./common/fs/
            cp ../susfs4ksu/kernel_patches/include/linux/* ./common/include/linux/
-           cp ../Action-KernelSU-Next/mksu_patch/kernel/* ./KernelSU/
            # Apply patches
            cd ./KernelSU
            patch -p1 --forward < MKSU-SKN_susfs.patch || true
