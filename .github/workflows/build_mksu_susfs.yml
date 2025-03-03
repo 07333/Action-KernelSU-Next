@@ -95,7 +95,7 @@ jobs:
            git clone https://github.com/WildPlusKernel/kernel_patches.git
            git clone https://github.com/yuhangle/Action-KernelSU-Next -b dev
            cd kernel_platform
-           cp ../kernel_patches/mksu_susfs.patch ./KernelSU/
+           cp ../kernel_patches/mksu/mksu_susfs.patch ./KernelSU/
            cp ../susfs4ksu/kernel_patches/KernelSU/10_enable_susfs_for_ksu.patch ./KernelSU/
            cp ../susfs4ksu/kernel_patches/50_add_susfs_in_gki-${{ github.event.inputs.ANDROID_VERSION }}-${{ github.event.inputs.KERNEL_VERSION }}.patch ./common/
            cp ../susfs4ksu/kernel_patches/fs/* ./common/fs/
