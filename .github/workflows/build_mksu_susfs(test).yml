@@ -109,14 +109,15 @@ jobs:
            cd kernel
            patch < ../core_hook.c.patch || true
            patch < ../sucompat.c.patch || true
+           patch -p1 < mksu_patch/kernel/001-lz4.patch
+           patch -p1 < mksu_patch/kernel/002-zstd.patch
+           
            cd ..
            cd ../common
            patch -p1 < 50_add_susfs_in_gki-${{ github.event.inputs.ANDROID_VERSION }}-${{ github.event.inputs.KERNEL_VERSION }}.patch || true
            cp ../../kernel_patches/69_hide_stuff.patch ./
            patch -p1 -F 3 < 69_hide_stuff.patch
-           patch -p1 < ../../.repo/mksu_patch/kernel/001-lz4.patch
-           patch -p1 < ../../.repo/mksu_patch/kernel/002-zstd.patch
-
+           
 
       - name: Build kernel
         run: |
